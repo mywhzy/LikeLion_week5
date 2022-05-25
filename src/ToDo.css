@@ -51,6 +51,14 @@
   color:rgb(62, 113, 230);
   font-weight: bold;
 }
+.checkedlist-item{
+  text-decoration: line-through;
+  color: rgb(144, 187, 247);
+  height: 30px;
+  border-bottom: 1px solid rgb(114, 148, 250);
+  margin: 2px;
+  font-weight: bold;
+}
 .checked-list{
   margin-right: 5px;
   cursor: pointer;

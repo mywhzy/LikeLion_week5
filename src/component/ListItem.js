@@ -1,9 +1,7 @@
 import React, { useRef, useState } from "react";
 
 function ListItem({text}){
-  const checkedItem = useRef(null);
-  const checkBox = useRef(null);
-  const deleteSelected = useRef(null);
+  const itemRef = useRef(null);
 
   let [checkedBox,setCheckedBox] = useState(false);
   let [deleteBtn,setDeleteBtn] = useState(false);
@@ -20,31 +18,29 @@ function ListItem({text}){
 
   function completedTodo(){
     if(checkedBox){
-      checkedItem.current.style.textDecoration = "line-through";
-      checkedItem.current.style.color = "rgb(144, 187, 247)";
+      itemRef.current.className = 'checkedlist-item';
     }else{
-      checkedItem.current.style.textDecoration = "solid";
-      checkedItem.current.style.color = "rgb(62, 113, 230)";
+      itemRef.current.className = 'list-item';
     }
   }
 
   function deleteTodo(){
     if(isClicked){
-      checkedItem.current.remove();
+      itemRef.current.remove();
     }
   }
 
-  function hanldeOnchange(e){
+  function handleOnchange(e){
     isChecked(e);
     completedTodo();
   }
 
   return(
     <div className="todo-lists">
-      <li className="list-item" ref={checkedItem}>
-        <input type="checkbox" className="checked-list" onChange={hanldeOnchange} ref={checkBox}/><label htmlFor="checked-list"/>
+      <li className="list-item" ref={itemRef}>
+        <input type="checkbox" className="checked-list" onChange={handleOnchange} /><label htmlFor="checked-list"/>
         {text}
-        <input type="button" value="⨉" className="delete-list" ref={deleteSelected} onClick={deleteTodo}></input>
+        <input type="button" value="⨉" className="delete-list" onClick={deleteTodo}></input>
       </li>
     </div>
   );
