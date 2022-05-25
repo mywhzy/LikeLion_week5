@@ -1,12 +1,12 @@
 .todo-component{
-  height: 500px;
-  width: 450px;
+  height: 680px;
+  width: 600px;
   border: 2px solid rgb(149, 178, 247);
   border-top: none;
   margin-left: auto;
   margin-right: auto;
   padding: 2px;
-  background-color: rgb(199, 220, 241);
+  background-color: rgb(192, 221, 251);
   overflow: auto;
   box-shadow:  1px 1px 3px 1px #6293f3;
 }
@@ -16,65 +16,69 @@
 }
 .input-todo{
   margin: 2px;
-  width: 370px;
-  height: 30px;
-  background-color: rgb(195, 216, 251);
+  width: 510px;
+  height: 40px;
+  background-color: rgba(175, 210, 250, 0.838);
   border: 2px solid rgb(157, 177, 202);
-  font-size: 15px;
+  font-size: 17px;
   color:rgb(82, 86, 98);
-}
-.input-todo:focus{
-  outline-color:rgb(102, 149, 243);
+
+  &:focus{
+    outline-color:rgb(102, 149, 243);
+  }
 }
 .add-btn{
-  margin-left: 2px;
-  width: 40px;
-  height: 35px;
+  margin-left: 5px;
+  width: 45px;
+  height: 43px;
   font-size: 20px;
   color:#2269f6;
   border: 2px solid rgb(157, 177, 202);
   border-radius: 5px;
-  background-color: rgb(173, 203, 255);
+  background-color: rgba(152, 197, 248, 0.894);
   cursor: pointer;
-}
-.add-btn:active{
-  border:2px solid rgb(102, 149, 243);
+
+  &:active{
+    border:2px solid rgb(102, 149, 243);
+  }
 }
 .todo-lists{
-  font-size: 17px;
+  font-size: 18px;
   margin-top: 0;
 }
 .list-item{
-  height: 30px;
+  height: 35px;
   border-bottom: 1px solid rgb(114, 148, 250);
   margin: 2px;
-  color:rgb(62, 113, 230);
+  color:rgb(94, 140, 248);
   font-weight: bold;
 }
 .checkedlist-item{
   text-decoration: line-through;
   color: rgb(144, 187, 247);
-  height: 30px;
+  height: 35px;
   border-bottom: 1px solid rgb(114, 148, 250);
   margin: 2px;
   font-weight: bold;
 }
 .checked-list{
-  margin-right: 5px;
+  margin-right: 10px;
   cursor: pointer;
 }
-.delete-list{
+
+.delete-btn{
   background-color: rgb(199, 220, 241);
   border: 2px solid rgb(134, 175, 251);
   color:rgb(42, 70, 249);
   border-radius: 5px;
   margin-left: 10px;
-  height: 25px;
-  width: 30px;
+  height: 27px;
+  width: 28px;
   font-weight: 600;
   text-align: center;
   cursor: pointer;
-}
-.delete-list:active{
-  border:1px solid rgb(102, 149, 243);
+  
+  &:active{
+    border:1px solid rgb(102, 149, 243);
+  }
 }

@@ -38,9 +38,9 @@ function ListItem({text}){
   return(
     <div className="todo-lists">
       <li className="list-item" ref={itemRef}>
-        <input type="checkbox" className="checked-list" onChange={handleOnchange} /><label htmlFor="checked-list"/>
+        <input type="checkbox" className="checked-list" onChange={handleOnchange} /><label htmlFor="checked-list" onChange={handleOnchange}/>
         {text}
-        <input type="button" value="⨉" className="delete-list" onClick={deleteTodo}></input>
+        <input type="button" value="⨉" className="delete-btn" onClick={deleteTodo}></input>
       </li>
     </div>
   );

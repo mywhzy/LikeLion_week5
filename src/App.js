@@ -2,13 +2,13 @@ import React from "react";
 import Clock from "./component/Clock";
 import ToDo from "./component/ToDo";
 import Title from "./component/Title";
-import './ToDo.css';
-import './Title.css';
-import './Clock.css'
+import './ToDo.scss';
+import './Clock.scss';
+import './App.scss';
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <Clock />
       <Title title="To Do List"/>
       <ToDo />

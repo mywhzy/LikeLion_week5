@@ -3,7 +3,6 @@ import ListItem from "./ListItem";
 
 function ToDo(){
   const inputRef = useRef(null);
-
   const [todos,setTodos] = useState([]);
   const [listNum,setListNum] = useState(0);
 
