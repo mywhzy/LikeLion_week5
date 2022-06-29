@@ -3,6 +3,8 @@ import ToDoList from "./ToDoList";
 import ToDoTitle from "./ToDoTitle";
 import styled from "styled-components";
 import { useState } from "react";
+import { useRecoilState, useRecoilValue, useResetRecoilState } from "recoil";
+import { toDos, toDoCounter } from "../atoms/Todos";
 
 const ToDoBox = styled.div`
   height: 780px;
@@ -10,19 +12,18 @@ const ToDoBox = styled.div`
   border: 2px solid rgb(149, 178, 247);
   margin-left: auto;
   margin-right: auto;
-  //padding: 2px;
   background-color: rgb(192, 221, 251);
-  //overflow: auto; -ToDoList부분으로 이동시키기
+  overflow: auto; //-ToDoList부분으로 이동시키기
   box-shadow:  1px 1px 3px 1px #6293f3;
 `;
 
-//제일 큰 투두박스(타이틀,리스트 다 포함하는 네모 박스)
-//타이틀 부분 : height-90 width:650 타이틀 아래: h-690 2-650
 function ToDo() {
 
-  const [todos,setTodos] = useState([]);
+  const [todos,setTodos] = useRecoilState(toDos);
   const [index,setIndex] = useState(0);
   const [inputTodo,setInputTodo] = useState("");
+  const counts = useRecoilValue(toDoCounter);
+  const resetTodos = useResetRecoilState(toDos);
 
   function addToDoList(){
     const newTodo = {
@@ -33,7 +34,6 @@ function ToDo() {
     setTodos(todos.concat(newTodo));
     setIndex(index+1);
     setInputTodo("");
-    console.log(todos);
   }
 
   function handleOnsubmit(e){
@@ -57,7 +57,7 @@ function ToDo() {
     <ToDoBox>
       <ToDoTitle />
       <ToDoInsert inputTodo={inputTodo} handleOnchange={handleOnchange} addTodo={addToDoList} submitTodo={handleOnsubmit} />
-      <ToDoList todos={todos} checkedTodo={isChecked} deleteTodo={deleteToDoList} />
+      <ToDoList todos={todos} counts={counts} resetTodos = {resetTodos} checkedTodo={isChecked} deleteTodo={deleteToDoList} />
     </ToDoBox>
   );
 }

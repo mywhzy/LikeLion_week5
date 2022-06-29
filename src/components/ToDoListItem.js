@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css }from "styled-components";
 
 const ToDoListItemBox = styled.div`
   font-size: 18px;
@@ -16,11 +16,13 @@ const ListItem = styled.li`
   color:rgb(94, 140, 248);
   font-weight: bold;
 
-  ${ListItemCheckBox}:checked &{
-    text-decoration: line-through;
-    color: rgb(144, 187, 247);
-    font-weight: bold;
-  }
+  ${(props)=>props.done && 
+  css`
+      text-decoration:line-through;
+      color:rgb(144, 187, 247);
+      font-weight: bold;
+      height: 35px;
+      `}
 `;
 
 const ListItemDeleteBtn = styled.input`
@@ -42,9 +44,8 @@ const ListItemDeleteBtn = styled.input`
 
 function ToDoListItem({id,content,done,checkedTodo,deleteTodo}) {
 
-  function handleOnchange(){  //함수명 겹쳐도 되나..?되도록이면 안 겹치는게 좋겠져???
+  function handleOnchange(){ 
     checkedTodo(id);
-    console.log("클릭한 리스트의 체크 상태"+done);
   }
   
   function handleOnclick(){
@@ -53,7 +54,7 @@ function ToDoListItem({id,content,done,checkedTodo,deleteTodo}) {
 
   return (
     <ToDoListItemBox>
-      <ListItem>
+      <ListItem done={done}>
         <ListItemCheckBox type="checkbox" onChange={handleOnchange} />
         {content}
         <ListItemDeleteBtn type="button" value="⨉" onClick={handleOnclick}/>

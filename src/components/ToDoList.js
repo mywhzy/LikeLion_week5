@@ -1,6 +1,5 @@
 import ToDoListItem from "./ToDoListItem";
 import styled from "styled-components";
-import { useState } from "react";
 
 
 const ToDoListTopBox = styled.div`
@@ -27,13 +26,13 @@ const ToDoListRestBtn = styled.input`
 
 const ToDoListSet = styled.ul``;
 
-function ToDoList({todos,checkedTodo,deleteTodo}) {
+function ToDoList({todos,counts,resetTodos,checkedTodo,deleteTodo}) {
 
   return (
     <>
     <ToDoListTopBox>
-      <ToDoListCounter>To Do: </ToDoListCounter>
-      <ToDoListRestBtn type ="button" value="List Reset"/>
+      <ToDoListCounter>To Do: {counts}</ToDoListCounter>
+      <ToDoListRestBtn type ="button" value="List Reset" onClick={resetTodos}/>
     </ToDoListTopBox>
     <ToDoListSet>{todos.map(todo=><ToDoListItem key={todo.id} id={todo.id} content={todo.content} done={todo.done} checkedTodo={checkedTodo} deleteTodo={deleteTodo} />)}</ToDoListSet>
     </>
