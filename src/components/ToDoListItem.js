@@ -42,8 +42,8 @@ const ListItemDeleteBtn = styled.input`
 
 function ToDoListItem({id,content,done,checkedTodo,deleteTodo}) {
 
-  function handleOnchange(e){  //함수명 겹쳐도 되나..?되도록이면 안 겹치는게 좋겠져???
-    checkedTodo(e);
+  function handleOnchange(){  //함수명 겹쳐도 되나..?되도록이면 안 겹치는게 좋겠져???
+    checkedTodo(id);
     console.log("클릭한 리스트의 체크 상태"+done);
   }
   

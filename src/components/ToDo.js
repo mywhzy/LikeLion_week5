@@ -23,13 +23,12 @@ function ToDo() {
   const [todos,setTodos] = useState([]);
   const [index,setIndex] = useState(0);
   const [inputTodo,setInputTodo] = useState("");
-  const [toDone,setToDone] = useState(false);
 
   function addToDoList(){
     const newTodo = {
       id: index,
       content: inputTodo,
-      done: toDone,
+      done: false,
     }
     setTodos(todos.concat(newTodo));
     setIndex(index+1);
@@ -46,8 +45,8 @@ function ToDo() {
     setInputTodo(e.target.value);
   }
 
-  function isChecked(e){
-    setToDone(e.target.checked);
+  function isChecked(id){
+    setTodos(todos.map(todo=>todo.id===id?{...todo,done:!todo.done}:todo));
   }
 
   function deleteToDoList(id){
