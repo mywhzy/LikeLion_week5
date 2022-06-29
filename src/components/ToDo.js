@@ -47,7 +47,7 @@ function ToDo() {
   }
 
   function isChecked(e){
-    setToDone(e.target.value);
+    setToDone(e.target.checked);
   }
 
   function deleteToDoList(id){
