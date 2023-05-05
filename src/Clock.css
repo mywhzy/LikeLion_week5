@@ -1,0 +1,7 @@
+.clock{
+  text-align: right;
+  margin-right: 5px;
+  font-size: 17px;
+  color:rgb(99, 146, 253);
+  text-shadow: 1px 1px 0px rgba(255, 253, 253, 0.913), 1.5px 1.5px 0px rgba(102, 147, 252, 0.759);
+}
