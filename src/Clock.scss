@@ -1,0 +1,25 @@
+.clock{
+  text-align: center;
+  font-size: 17px;
+}
+.date{
+  color:rgb(99, 146, 253);
+  display: inline-block;
+  width: 200px;
+  text-shadow: 1px 1px 0px rgba(255, 253, 253, 0.913), 1.5px 1.5px 0px rgba(102, 147, 252, 0.759);
+  &:hover{
+    color:rgb(77, 128, 247);
+    font-style: italic;
+  }
+}
+.time{
+  color:rgb(99, 146, 253);
+  width: 150px;
+  display: inline-block;
+  margin-top: 0;
+  text-shadow: 1px 1px 0px rgba(255, 253, 253, 0.913), 1.5px 1.5px 0px rgba(102, 147, 252, 0.759);
+  &:hover{
+    color:rgb(77, 128, 247);
+    font-style: italic;
+  }
+}

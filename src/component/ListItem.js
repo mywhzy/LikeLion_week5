@@ -1,19 +1,13 @@
 import React, { useRef, useState } from "react";
 
-function ListItem({text}){
+function ListItem({id,text,deleteToDo}){
   const itemRef = useRef(null);
 
   let [checkedBox,setCheckedBox] = useState(false);
-  let [deleteBtn,setDeleteBtn] = useState(false);
 
   function isChecked(e){
     checkedBox = e.target.checked;
     setCheckedBox(checkedBox);
-  }
-
-  function isClicked(e){
-    deleteBtn = e.target.clicked;
-    setDeleteBtn(deleteBtn);
   }
 
   function completedTodo(){
@@ -24,23 +18,21 @@ function ListItem({text}){
     }
   }
 
-  function deleteTodo(){
-    if(isClicked){
-      itemRef.current.remove();
-    }
-  }
-
   function handleOnchange(e){
     isChecked(e);
     completedTodo();
   }
 
+  function handleOnclick(){
+    deleteToDo(id);
+  }
+
   return(
     <div className="todo-lists">
       <li className="list-item" ref={itemRef}>
-        <input type="checkbox" className="checked-list" onChange={handleOnchange} /><label htmlFor="checked-list"/>
+        <input type="checkbox" className="checked-list" id="check-box" onChange={handleOnchange} /> <label /*htmlFor="check-box"*//>
         {text}
-        <input type="button" value="⨉" className="delete-list" onClick={deleteTodo}></input>
+        <input type="button" value="⨉" className="delete-btn" onClick={handleOnclick}></input>
       </li>
     </div>
   );

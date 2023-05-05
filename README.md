@@ -1,3 +1,7 @@
+# LikeLion week6 - To Do List 스타일 css -> scss / styled-components
+
+----------------------------------------------
+
 # LikeLion week5 - To Do List
 
 ### 아쉬움이 너무 많이 남는 이번 과제,, 정말 기본 기능만 (겨우) 충실한 To Do List 입니당

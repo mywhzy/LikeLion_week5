@@ -17,6 +17,7 @@ function Clock(){
   return(
     <div className="clock">
      <h3 className="date">Today is {time.toLocaleDateString()}</h3>
+     <br/>
      <h3 className="time">{time.toLocaleTimeString()}</h3>
     </div>
   );
